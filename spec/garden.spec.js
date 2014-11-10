@@ -1,7 +1,5 @@
 'use strict';
 
-var Garden = require('../lib/garden');
-
 describe('Garden', function () {
 
   it('for Alice', function () {
