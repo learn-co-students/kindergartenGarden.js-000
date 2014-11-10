@@ -4,18 +4,6 @@ tags: hard, oo, dynamic methods
 ---
 
 # Kindergarten Garden
-## Getting Started
-
-Run `npm install`
-
-## Tests
-
-Review the `garden.js` file inside the `lib` directory, and then the `garden.spec.js` file inside the `spec` directory. Review each of the tests, and then start implementing your solutions to make each test pass in `garden.js`.
-
-Run `grunt watch` then edit your files. Grunt will watch for changes. Grunt
-will only run tests that start with `it`. When you finish passing a test,
-remove the `x` from `xit` to convert it to a runnable test.
-
 ## The Garten Garden
 Meet your new class!
 
