@@ -25,7 +25,7 @@ describe('Garden', function () {
 });
 
 describe('Full garden', function () {
-  children = [
+  var children = [
                 'Alice',
                 'Bob',
                 'Charlie',
