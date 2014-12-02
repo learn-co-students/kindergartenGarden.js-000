@@ -1,24 +1,23 @@
 'use strict';
 
 describe('Garden', function () {
-
   it('for Alice', function () {
-    expect(new Garden("RC\nGG").alice)
+    expect(new Garden('RC\nGG', ['Alice']).alice)
       .toEqual(['radishes', 'clover', 'grass', 'grass']);
   });
 
   xit('another for Alice', function () {
-    expect(new Garden("VC\nRC").alice)
+    expect(new Garden('VC\nRC', ['Alice']).alice)
       .toEqual(['violets', 'clover', 'radishes', 'clover']);
   });
 
   xit('for Bob', function () {
-    expect(new Garden("VVCG\nVVRC").bob)
+    expect(new Garden('VVCG\nVVRC', ['Alice', 'Bob']).bob)
       .toEqual(['clover', 'grass', 'radishes', 'clover']);
   });
 
   xit('for Bob and Charlie', function () {
-    var garden = new Garden("VVCCGG\nVVCCGG");
+    var garden = new Garden('VVCCGG\nVVCCGG', ['Alice', 'Bob', 'Charlie']);
     expect(garden.bob).toEqual(['clover', 'clover', 'clover', 'clover']);
     expect(garden.charlie).toEqual(['grass', 'grass', 'grass', 'grass']);
   });
@@ -26,8 +25,22 @@ describe('Garden', function () {
 });
 
 describe('Full garden', function () {
-  var diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV";
-  var garden = new Garden(diagram);
+  children = [
+                'Alice',
+                'Bob',
+                'Charlie',
+                'David',
+                'Eve',
+                'Fred',
+                'Ginny',
+                'Harriet',
+                'Ileana',
+                'Joseph',
+                'Kincaid',
+                'Larry'
+              ];
+  var diagram = 'VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV';
+  var garden = new Garden(diagram, children);
 
   xit('for Alice', function () {
     expect(garden.alice)
@@ -92,7 +105,7 @@ describe('Full garden', function () {
 });
 
 describe('Disordered class', function () {
-  var diagram = "VCRRGVRG\nRVGCCGCV";
+  var diagram = 'VCRRGVRG\nRVGCCGCV';
   var students = ['Samantha', 'Patricia', 'Xander', 'Roger'];
   var garden = new Garden(diagram, students);
 
@@ -119,9 +132,9 @@ describe('Disordered class', function () {
 });
 
 describe('Two gardens, different students', function () {
-  var diagram = "VCRRGVRG\nRVGCCGCV";
-  var garden1 = new Garden(diagram, ["Alice", "Bob", "Charlie", "Dan"]);
-  var garden2 = new Garden(diagram, ["Bob", "Charlie", "Dan", "Erin"]);
+  var diagram = 'VCRRGVRG\nRVGCCGCV';
+  var garden1 = new Garden(diagram, ['Alice', 'Bob', 'Charlie', 'Dan']);
+  var garden2 = new Garden(diagram, ['Bob', 'Charlie', 'Dan', 'Erin']);
 
   xit('Bob and Charlie for each garden', function () {
     expect(garden1.bob)
