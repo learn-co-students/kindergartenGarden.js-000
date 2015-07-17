@@ -1,8 +1,3 @@
----
-languages: javascript
-tags: hard, oo, dynamic methods
----
-
 # Kindergarten Garden
 ## The Garten Garden
 Meet your new class!
